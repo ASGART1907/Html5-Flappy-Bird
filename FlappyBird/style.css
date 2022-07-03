@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas{
+    width: 100%;
+    height: 100%;
+}
+
+.score{
+    position: fixed;
+    font-size: 2.5rem;
+    font-weight:100;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    left: 50%;
+    transform: rotateX(-50%);
+    top: 10px;
+    right: 20px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px black;
+}
+
+.container{
+    position: absolute;
+    background-color:rgb(8, 183, 66,0.9);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    justify-content: center;
+    animation: containerAnimate 1s linear infinite;
+    display: flex;
+}
+
+.container .img-container{
+    position: relative;
+    width: 90%;
+    height: 90%;
+}
+
+.container .img-container img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.container2 strong{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 170px;
+    color: khaki;
+    font-size: 1.5rem;
+}
+
+.container2 .container2-score{
+    position: absolute;
+    left: 50%;
+    top: 260px;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    color: white;
+    font-weight: bold;
+}
+
+
+.container2 .again{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 10px;
+    background-color: orangered;
+    bottom: 70px;
+    color: khaki;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-bottom: 4px solid darkred;
+    cursor: pointer;
+}
+
+.container2 .again:active{
+    border: none;
+}
+
+.container2 .again:hover{
+    background-color: khaki;
+    color: orangered;
+}
+
+@keyframes containerAnimate{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0.7;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    canvas,.container,.container2{
+        width: 375px;
+        height: 567px;
+    }
+
+    .again{
+        bottom: 70px;
+    }
+
+    .score{
+        margin-top: 20px;
+    }
+}
+
+
